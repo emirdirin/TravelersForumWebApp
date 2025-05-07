@@ -1,0 +1,36 @@
+@model Homework1.ViewModels.LoginViewModel
+
+<h2>Login</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="text-center mt-3">
+        <a href="/Account/Register" class="btn btn-secondary btn-lg px-5 ms-3">Don't have an account? Register here</a>
+    </div>
+    
+    <button button-text="Login" button-type="submit" class="btn btn-primary btn-lg px-5"></button>
+</form>
+

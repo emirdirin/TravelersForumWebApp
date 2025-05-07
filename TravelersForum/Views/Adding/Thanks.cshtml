@@ -1,0 +1,16 @@
+@model Homework1.Models.Place
+
+<div class="container my-5 text-center">
+    <h1 class="display-5 text-success">🎉 Thank You!</h1>
+    <p class="lead">Your place has been successfully submitted to Travelers Forum.</p>
+    <div class="my-4 p-4 bg-light rounded shadow-sm">
+        <h3 class="text-primary">Added Place Summary</h3>
+        <p><strong>Added by:</strong> @Model.userName</p>
+        <p><strong>Title:</strong> @Model.placeName</p>
+        <p><strong>Details:</strong> @Model.placeInfo</p>
+    </div>
+    <div class="mt-5">
+        <button button-text=" Return to Main Page" href="/Home/Index" class="btn btn-primary btn-lg"></button>
+        <button button-text=" View All Destinations" href="/Adding/List" class="btn btn-success btn-lg ms-3"></button>  
+    </div>
+</div>

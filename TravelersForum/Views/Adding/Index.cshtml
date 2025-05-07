@@ -1,0 +1,49 @@
+@model Homework1.Models.Place
+
+<div class="container my-5">
+    <div class="text-center">
+        <h2 class="mb-4">🗺️ Add a New Place</h2>
+        <p class="text-muted">Fill out the form below to create a new place for Travelers Forum.</p>
+    </div>
+
+    <div asp-validation-summary="All" class="alert alert-danger" role="alert" style="display:none;">
+        Please fix the errors below and try again.
+    </div>
+
+    <form method="post" action="/Adding/Index" class="p-4 bg-light shadow-sm rounded">
+        <div class="mb-3">
+            <label asp-for="userName" class="form-label fw-bold">User Name</label>
+            <input asp-for="userName" class="form-control" placeholder="Enter full name" value="@User.Identity.Name" readonly/>
+            <span asp-validation-for="userName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="placeName" class="form-label fw-bold">Place Name</label>
+            <input asp-for="placeName" class="form-control" placeholder="Enter the name of the place" />
+            <span asp-validation-for="placeName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="placeInfo" class="form-label fw-bold">Place Info</label>
+            <textarea asp-for="placeInfo" class="form-control" rows="5" placeholder="Give information about the place"></textarea>
+            <span asp-validation-for="placeInfo" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImageUrl" class="form-label fw-bold">Image Url</label>
+            <input asp-for="ImageUrl" class="form-control" placeholder="Enter a Url of a picture from this place">
+            <span asp-validation-for="ImageUrl" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="locationName" class="form-label fw-bold">Location Name</label>
+            <input asp-for="locationName" class="form-control" placeholder="Write the Location of this place">
+            <span asp-validation-for="locationName" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+    <button button-text="Save" button-type="submit" class="btn btn-primary btn-lg px-5"></button>
+    <button button-text="Cancel" href="/Adding/List" class="btn btn-secondary btn-lg px-5 ms-3"></button>
+    </div>
+    </form>
+</div>

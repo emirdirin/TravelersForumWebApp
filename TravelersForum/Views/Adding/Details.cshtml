@@ -1,0 +1,11 @@
+@model Place
+
+<p style="text-align:left"><b>Image :</b> <img src="@Model.ImageUrl" alt="Image for @Model.placeName" style="max-width: 350px; height: auto;"></p>
+<p style="text-align:left"><b>Destination Name :</b> @Model.placeName</p>
+<p style="text-align:left"><b>Destination Information  :</b> @Model.placeInfo</p>
+<p style="text-align:left"><b>Added by :</b> @Model.userName</p>
+<p style="text-align:left"><b>Submission Date  :</b> @Model.submissionDate</p>
+<p style="text-align:left"><b>Location Name :</b>@Model.locationName</p>
+<button button-text="Click to Return Destinations " href="/Adding/List" class="btn btn-success btn-lg"></button>
+
+
